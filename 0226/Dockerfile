@@ -10,7 +10,6 @@ RUN yum -y install which openssh-server php-mysql php-gd php-mcrypt php-zip php-
 RUN yum -y install mysql
 
 
-
 ##### Git Fetch from Target Repo #####
 
 RUN yum -y install git
