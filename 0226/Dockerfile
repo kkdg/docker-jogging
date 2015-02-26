@@ -11,7 +11,6 @@ RUN yum -y install mysql
 
 
 
-
 ##### Git Fetch from Target Repo #####
 
 RUN yum -y install git
