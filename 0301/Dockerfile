@@ -38,4 +38,10 @@ RUN cd /var/www/ && chmod -R o+w media && chmod o+w app/etc
 #CMD /usr/sbin/nginx -g "deamon off";
 #CMD /usr/sbin/php-fpm -g "deamon off";
 
+RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
+ADD start.sh /start.sh
+
+RUN chmod 755 /start.sh
+
+CMD /start.sh
