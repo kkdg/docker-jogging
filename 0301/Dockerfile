@@ -11,9 +11,6 @@ RUN yum -y install mysql
 
 ADD default.conf /etc/nginx/conf.d/default.conf
 
-RUN service nginx start
-RUN service php-fpm start
-
 RUN chkconfig php-fpm on
 RUN chkconfig nginx on
 
@@ -36,5 +33,9 @@ RUN ls -la
 RUN whoami
 RUN mkdir /var/www &&  cp -R /tmp/unicorn/* /var/www/
 RUN cd /var/www/ && chmod -R o+w media && chmod o+w app/etc
+
+##### Run in active mode #####
+#CMD /usr/sbin/nginx -g "deamon off";
+#CMD /usr/sbin/php-fpm -g "deamon off";
 
 
