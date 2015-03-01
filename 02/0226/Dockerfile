@@ -11,6 +11,9 @@ RUN yum -y install mysql
 
 ADD default.conf /etc/nginx/conf.d/default.conf
 
+RUN service nginx start
+RUN service php-fpm start
+
 RUN chkconfig php-fpm on
 RUN chkconfig nginx on
 
@@ -26,3 +29,11 @@ ADD config /root/.ssh/config
 RUN chmod 600 /root/.ssh/config
 
 RUN cd /tmp && git clone git@bitbucket.org:degi-yg1/unicorn.git
+
+##### Setting for Permission #####
+
+RUN mv /tmp/unicorn/ /var/www
+
+RUN cd /var/www/ && chmod -R o+w media var && chmod o+w app/etc
+
+
