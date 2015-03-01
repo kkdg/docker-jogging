@@ -35,6 +35,6 @@ RUN cd /tmp && git clone git@bitbucket.org:degi-yg1/unicorn.git
 RUN ls -la 
 RUN whoami
 RUN mkdir /var/www &&  cp -R /tmp/unicorn/* /var/www/
-#RUN cd /var/www/ && chmod -R o+w media var && chmod o+w app/etc
+RUN cd /var/www/ && chmod -R o+w media var && chmod o+w app/etc
 
 
