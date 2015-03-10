@@ -18,29 +18,27 @@ RUN chkconfig nginx on
 
 ##### Git Fetch from Target Repo #####
 
-RUN yum -y install git
+#RUN yum -y install git
 
 RUN mkdir /root/.ssh/
 
 ADD repo-key /root/.ssh/repo-key
-
 ADD config /root/.ssh/config
 RUN chmod 600 /root/.ssh/config
 
-RUN cd /tmp && git clone git@bitbucket.org:degi-yg1/unicorn.git
+#RUN cd /tmp && git clone git@bitbucket.org:degi-yg1/unicorn.git
 
 ##### Copying EE zip file #####
 
 RUN mkdir /var/www/
-ADD ee.tar.gz /var/www/ee.tar.gz
-RUN tar -xvfz /var/www/ee.tar.gz
-
-
+ADD ee.tar.gz /tmp/ee.tar.gz
+#RUN tar -xvfz /var/www/ee.tar.gz
+RUN cp -R /tmp/ee.tar.gz/magento/* /var/www 
 ##### Setting for Permission #####
 
-RUN ls -la 
-RUN whoami
-RUN cp -R /tmp/unicorn/* /var/www/
+#RUN ls -la 
+#RUN whoami
+#RUN cp -R /tmp/unicorn/* /var/www/
 RUN cd /var/www/ && chmod -R o+w media && chmod o+w app/etc
 
 #RUN echo "daemon off;" >> /etc/nginx/nginx.conf
