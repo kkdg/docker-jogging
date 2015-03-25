@@ -12,4 +12,6 @@ service nginx start
 
 /install.sh
 
+service nginx stop
+
 nginx -g 'daemon off;'
