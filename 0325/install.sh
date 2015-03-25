@@ -27,7 +27,7 @@ echo
 echo "Installing Magento..."
 echo
 
-php -f install.php -- \
+php -f /var/www/install.php -- \
 --license_agreement_accepted "yes" \
 --locale "zh_CN" \
 --timezone "China/Shanghai" \

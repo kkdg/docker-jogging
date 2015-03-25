@@ -45,6 +45,6 @@ RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
 ADD start.sh /start.sh
 ADD install.sh /install.sh
-RUN chmod 755 /start.sh /install.sh
+RUN chmod 755 /start.sh /install.sh /var/www/install.php
 
 CMD /start.sh
