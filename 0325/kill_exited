@@ -1,2 +1,0 @@
-# Kill exited container
-sudo docker ps -a | grep 'Exited' | awk '{print $1}' | xargs --no-run-if-empty sudo docker rm

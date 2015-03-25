@@ -1,2 +1,2 @@
-# Kill exited container
+# Kill fragmented images
 sudo docker images -a | grep '^<none>' | awk '{print $3}' | xargs --no-run-if-empty sudo docker rmi
