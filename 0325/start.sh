@@ -8,6 +8,8 @@ service php-fpm start
 
 echo "Running nginx..."
 
-service nginx start &
+service nginx start 
 
 /install.sh
+
+nginx -g 'daemon off;'

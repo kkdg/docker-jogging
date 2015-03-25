@@ -41,7 +41,7 @@ RUN cp -R /tmp/ee.tar.gz/magento/* /var/www
 #RUN cp -R /tmp/unicorn/* /var/www/
 RUN cd /var/www/ && chmod -R o+w media && chmod o+w app/etc
 
-RUN echo "daemon off;" >> /etc/nginx/nginx.conf
+#RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
 ADD start.sh /start.sh
 ADD install.sh /install.sh
