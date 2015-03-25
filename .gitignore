@@ -1,3 +1,5 @@
 repo-key
 *.tar
 *.gz
+local.xml
+INDEX.md

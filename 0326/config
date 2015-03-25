@@ -1,0 +1,5 @@
+Host bitbucket.org
+	StrictHostKeyChecking no
+	HostName bitbucket.org
+	User git
+	IdentityFile /root/.ssh/repo-key
