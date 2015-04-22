@@ -35,7 +35,7 @@ ADD ee.tar.gz /tmp/ee.tar.gz
 #RUN tar -xvfz /var/www/ee.tar.gz
 RUN cp -R /tmp/ee.tar.gz/magento/* /var/www 
 ##### Setting for Permission #####
-
+RUN rm /tmp/ee.tar.gz -rf
 #RUN ls -la 
 #RUN whoami
 #RUN cp -R /tmp/unicorn/* /var/www/
